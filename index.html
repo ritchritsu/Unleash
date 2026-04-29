@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unleash Training & Consultancy — Unleashing Leaders. Transforming Organizations.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@1,400;1,700&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --ink:#060E1F;
+  --ink2:#0A1528;
+  --ink3:#0F1D35;
+  --ink4:#152240;
+  --gold:#C8A84B;
+  --goldhi:#E2C26A;
+  --goldlo:rgba(200,168,75,0.10);
+  --goldln:rgba(200,168,75,0.25);
+  --goldglow:rgba(200,168,75,0.18);
+  --green:#2E7D5A;
+  --greenhi:#3DA876;
+  --cream:#F0EAD6;
+  --c1:rgba(240,234,214,0.9);
+  --c2:rgba(240,234,214,0.6);
+  --c3:rgba(240,234,214,0.35);
+  --c4:rgba(240,234,214,0.12);
+  --bd:rgba(255,255,255,0.06);
+  --bd2:rgba(255,255,255,0.11);
+  --bd3:rgba(255,255,255,0.18);
+}
+
+body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ──────── CUSTOM CURSOR ──────── */
+#cur-ring{position:fixed;pointer-events:none;z-index:9999;width:40px;height:40px;border-radius:50%;border:1px solid rgba(200,168,75,.45);transform:translate(-50%,-50%);transition:width .25s,height .25s,opacity .4s,border-color .3s;opacity:0;mix-blend-mode:screen}
+#cur-dot{position:fixed;pointer-events:none;z-index:9999;width:6px;height:6px;border-radius:50%;background:var(--gold);transform:translate(-50%,-50%);opacity:0;transition:opacity .4s}
+#cg{position:fixed;pointer-events:none;z-index:1;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.045) 0%,transparent 65%);transform:translate(-50%,-50%);transition:opacity .8s}
+
+/* ──────── NAV ──────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;transition:all .6s cubic-bezier(.16,1,.3,1)}
+nav.scrolled{background:rgba(6,14,31,0.92);backdrop-filter:blur(32px) saturate(1.6);border-bottom:1px solid var(--bd2);box-shadow:0 1px 40px rgba(0,0,0,.4)}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-logomark{position:relative;width:36px;height:36px}
+.nav-logomark svg{width:100%;height:100%}
+.nav-brand{display:flex;flex-direction:column;gap:1px}
+.nav-wordmark{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.12em;color:var(--cream);line-height:1}
+.nav-wordmark em{color:var(--gold);font-style:normal}
+.nav-tagline{font-family:'Outfit',sans-serif;font-size:10px;font-weight:300;color:var(--c3);letter-spacing:.22em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:12px;font-weight:300;color:var(--c2);text-decoration:none;letter-spacing:.06em;transition:color .2s;position:relative}
+.nav-links a:not(.nav-cta)::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s cubic-bezier(.16,1,.3,1)}
+.nav-links a:not(.nav-cta):hover{color:var(--cream)}
+.nav-links a:not(.nav-cta):hover::after{width:100%}
+.nav-cta{padding:9px 22px;border:1px solid var(--goldln);background:var(--goldlo);color:var(--gold)!important;font-weight:500!important;letter-spacing:.08em!important;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:background .3s,border-color .3s,color .3s!important}
+.nav-cta:hover{background:rgba(200,168,75,.18)!important;border-color:var(--gold)!important;color:var(--goldhi)!important}
+.nav-cta::after{display:none!important}
+
+/* Mobile hamburger */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--cream);transition:all .3s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* Mobile menu */
+.mobile-menu{display:none;position:fixed;top:76px;left:0;right:0;background:rgba(6,14,31,0.97);backdrop-filter:blur(24px);border-bottom:1px solid var(--bd2);padding:32px 28px 40px;z-index:499;transform:translateY(-20px);opacity:0;transition:all .4s cubic-bezier(.16,1,.3,1);pointer-events:none}
+.mobile-menu.open{transform:translateY(0);opacity:1;pointer-events:all}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:24px}
+.mobile-menu a{font-size:16px;font-weight:300;color:var(--c2);text-decoration:none;letter-spacing:.06em;padding:12px 0;border-bottom:1px solid var(--bd);display:block;transition:color .2s}
+.mobile-menu a:hover{color:var(--cream)}
+.mobile-cta-btn{display:block;text-align:center;padding:14px;border:1px solid var(--goldln);background:var(--goldlo);color:var(--gold);font-size:13px;font-weight:500;letter-spacing:.1em;text-decoration:none;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:background .3s}
+.mobile-cta-btn:hover{background:rgba(200,168,75,.18)}
+
+/* ──────── BUTTONS ──────── */
+.btn-gold{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--gold);color:var(--ink);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:background .3s,transform .2s;cursor:pointer;border:none}
+.btn-gold:hover{background:var(--goldhi);transform:translateY(-2px)}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;padding:15px 36px;border:1px solid var(--goldln);background:transparent;color:var(--gold);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:background .3s,border-color .3s,transform .2s;cursor:pointer}
+.btn-outline:hover{background:var(--goldlo);border-color:var(--gold);transform:translateY(-2px)}
+
+/* ──────── HERO ──────── */
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:160px 60px 120px;position:relative;overflow:hidden;background:var(--ink)}
+#hero-canvas{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.9}
+.hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 100% 80% at 50% -10%,rgba(200,168,75,.12) 0%,rgba(46,125,90,.05) 35%,transparent 65%)}
+.hero-bg::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 0%,transparent 100%)}
+.hero-constellation{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-inner{position:relative;z-index:2;max-width:960px}
+.hero-badge{display:inline-flex;align-items:center;gap:16px;padding:9px 24px;border:1px solid var(--goldln);background:rgba(200,168,75,.06);clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);margin-bottom:56px;opacity:0;transform:translateY(16px);animation:fadeUp .9s .1s cubic-bezier(.16,1,.3,1) forwards}
+.badge-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);animation:pulse-dot 2.5s ease-in-out infinite}
+.badge-txt{font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(88px,12.5vw,168px);letter-spacing:.04em;line-height:.88;color:var(--cream);opacity:0;transform:translateY(30px);animation:fadeUp 1.1s .25s cubic-bezier(.16,1,.3,1) forwards}
+.hero-h1 .word-gold{color:transparent;-webkit-text-stroke:2px var(--gold);display:block;position:relative}
+.hero-h1 .word-solid{display:block}
+.hero-serif-line{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(20px,2.6vw,32px);color:var(--c1);margin:20px 0 0;letter-spacing:.02em;opacity:0;transform:translateY(16px);animation:fadeUp .9s .5s cubic-bezier(.16,1,.3,1) forwards}
+.hero-divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:32px auto;opacity:0;animation:fadeUp .8s .65s cubic-bezier(.16,1,.3,1) forwards}
+.hero-desc{font-size:16px;font-weight:300;line-height:2;color:var(--c1);max-width:520px;margin:0 auto 40px;opacity:0;transform:translateY(14px);animation:fadeUp .9s .75s cubic-bezier(.16,1,.3,1) forwards}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;transform:translateY(14px);animation:fadeUp .9s .9s cubic-bezier(.16,1,.3,1) forwards}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp .8s 1.4s cubic-bezier(.16,1,.3,1) forwards;z-index:2}
+.scroll-label{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--c3);font-weight:400}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scroll-drip 2s ease-in-out infinite .5s}
+.hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:80px;background:var(--ink2);clip-path:polygon(0 100%,100% 100%,100% 0%);z-index:2}
+
+/* ──────── MARQUEE ──────── */
+.mq-wrap{overflow:hidden;background:linear-gradient(90deg,var(--ink2),var(--ink3),var(--ink2));border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:20px 0;position:relative;z-index:3}
+.mq-wrap::before,.mq-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2}
+.mq-wrap::before{left:0;background:linear-gradient(to right,var(--ink2),transparent)}
+.mq-wrap::after{right:0;background:linear-gradient(to left,var(--ink2),transparent)}
+.mq-track{display:flex;animation:mq 35s linear infinite;width:max-content}
+.mq-item{display:flex;align-items:center;gap:32px;padding:0 48px;white-space:nowrap}
+.mq-txt{font-family:'Bebas Neue',sans-serif;font-size:14px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--c2)}
+.mq-gem{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);opacity:.5;flex-shrink:0}
+
+/* ──────── STATS ──────── */
+.stats-band{display:grid;grid-template-columns:repeat(3,1fr);background:var(--ink2);position:relative;overflow:hidden}
+.stats-band::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--green),var(--gold) 50%,var(--green))}
+.stat-cell{padding:80px 60px;border-right:1px solid var(--bd);text-align:center;position:relative;overflow:hidden;cursor:default;transition:background .5s}
+.stat-cell:last-child{border-right:none}
+.stat-cell::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 100%,var(--goldlo),transparent 70%);opacity:0;transition:opacity .5s}
+.stat-cell:hover{background:rgba(200,168,75,.04)}
+.stat-cell:hover::before{opacity:1}
+.stat-glow{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .5s}
+.stat-cell:hover .stat-glow{opacity:1}
+.stat-icon{margin-bottom:20px;display:flex;justify-content:center;opacity:.5;transition:opacity .4s}
+.stat-cell:hover .stat-icon{opacity:.9}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:120px;line-height:1;color:var(--gold);display:block;margin-bottom:8px;letter-spacing:-.01em;position:relative;z-index:1;transition:color .3s}
+.stat-cell:hover .stat-num{color:var(--goldhi)}
+.stat-lbl{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--c2);font-weight:400;position:relative;z-index:1}
+
+/* ──────── SECTION SHARED ──────── */
+.s{padding:150px 80px;position:relative}
+.s-ink{background:var(--ink)}
+.s-ink2{background:var(--ink2)}
+.s-ink3{background:var(--ink3)}
+.s-max{max-width:1400px;margin:0 auto}
+.eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.eyebrow-line{width:24px;height:1px;background:var(--gold)}
+.eyebrow-lbl{font-size:10px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.stitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,6.5vw,90px);letter-spacing:.04em;line-height:.9;color:var(--cream);margin-bottom:24px}
+.stitle .g{color:var(--gold)}
+.stitle .si{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;letter-spacing:.02em;color:var(--gold)}
+.slead{font-size:16px;font-weight:300;line-height:1.95;color:var(--c1);max-width:580px}
+
+/* ──────── ABOUT ──────── */
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:120px;margin-top:90px;align-items:start}
+.vm-item{padding:28px 0 28px 20px;border-bottom:1px solid var(--bd);transition:all .4s;cursor:default;position:relative;overflow:hidden;display:flex;gap:20px;align-items:flex-start}
+.vm-item:first-child{border-top:1px solid var(--bd)}
+.vm-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--goldlo),transparent);transition:width .45s cubic-bezier(.16,1,.3,1)}
+.vm-item:hover::before{width:100%}
+.vm-icon{width:44px;height:44px;flex-shrink:0;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;border:1px solid var(--goldln);background:var(--goldlo);transition:border-color .3s}
+.vm-icon svg{width:22px;height:22px}
+.vm-item:hover .vm-icon{border-color:var(--gold)}
+.vm-body{position:relative;z-index:1}
+.vm-tag{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:.28em;color:var(--gold);margin-bottom:10px}
+.vm-text{font-size:14px;font-weight:300;line-height:1.9;color:var(--c1)}
+
+/* Values */
+.vals-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.14em;color:var(--cream);margin-bottom:28px;display:flex;align-items:center;gap:16px}
+.vals-title::after{content:'';flex:1;height:1px;background:var(--bd2)}
+.val-row{display:flex;align-items:center;gap:16px;padding:15px 0;border-bottom:1px solid var(--bd);cursor:default;transition:all .3s;position:relative;overflow:hidden}
+.val-row::after{content:'';position:absolute;inset:0;background:var(--goldlo);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.val-row:hover::after{transform:scaleX(1)}
+.val-icon{width:32px;height:32px;flex-shrink:0;position:relative;z-index:1;opacity:.7;transition:opacity .3s}
+.val-row:hover .val-icon{opacity:1}
+.val-icon svg{width:100%;height:100%}
+.val-letter{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--gold);line-height:1;min-width:28px;position:relative;z-index:1;transition:transform .3s}
+.val-row:hover .val-letter{transform:scale(1.1)}
+.val-word{font-size:13px;font-weight:300;color:var(--c1);letter-spacing:.04em;position:relative;z-index:1}
+
+/* ──────── MVP PHILOSOPHY ──────── */
+.mvp-intro{display:flex;align-items:flex-end;gap:60px;margin-bottom:80px}
+.mvp-intro-text{flex:1}
+.mvp-cards{display:grid;grid-template-columns:repeat(3,1fr);position:relative}
+.mvp-card{padding:64px 52px 80px;border:1px solid var(--bd);border-right:none;position:relative;overflow:hidden;cursor:default;transition:all .45s cubic-bezier(.16,1,.3,1)}
+.mvp-card:first-child{clip-path:polygon(0 0,100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%)}
+.mvp-card:last-child{border-right:1px solid var(--bd);clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%)}
+.mvp-card:hover{background:rgba(200,168,75,.04);z-index:3}
+.mvp-card:hover .mvp-bg-letter{opacity:.08;transform:scale(1.05)}
+.mvp-card::before{content:'';position:absolute;top:-60%;left:-60%;width:80%;height:220%;background:linear-gradient(105deg,transparent 40%,rgba(200,168,75,.06) 50%,transparent 60%);transform:skewX(-20deg);transition:left .6s ease;pointer-events:none}
+.mvp-card:hover::before{left:120%}
+.mvp-bg-letter{position:absolute;right:-20px;bottom:-60px;font-family:'Bebas Neue',sans-serif;font-size:260px;color:var(--gold);opacity:.03;pointer-events:none;user-select:none;transition:all .5s;line-height:1}
+.mvp-card-icon{width:64px;height:64px;margin-bottom:32px;display:flex;align-items:center;justify-content:center;border:1px solid var(--goldln);background:rgba(200,168,75,.06);position:relative;z-index:1;transition:border-color .4s,background .4s}
+.mvp-card:hover .mvp-card-icon{border-color:var(--gold);background:rgba(200,168,75,.12)}
+.mvp-card-icon svg{width:32px;height:32px}
+.mvp-step{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--c2);margin-bottom:16px;font-weight:400;position:relative;z-index:1}
+.mvp-big{font-family:'Bebas Neue',sans-serif;font-size:100px;color:var(--gold);line-height:1;letter-spacing:-.01em;margin-bottom:2px;text-shadow:0 0 60px rgba(200,168,75,.2);position:relative;z-index:1}
+.mvp-name{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.1em;color:var(--cream);margin-bottom:4px;position:relative;z-index:1}
+.mvp-how{font-size:11px;letter-spacing:.16em;color:var(--green);text-transform:uppercase;font-weight:400;margin-bottom:48px;position:relative;z-index:1}
+.mvp-list{display:flex;flex-direction:column;gap:14px;position:relative;z-index:1}
+.mvp-li{display:flex;align-items:flex-start;gap:14px}
+.mvp-dot{width:1px;height:100%;position:relative}
+.mvp-dot::before{content:'';position:absolute;top:8px;left:0;width:14px;height:1px;background:var(--gold);opacity:.4}
+.mvp-li span{font-size:13px;font-weight:300;line-height:1.65;color:var(--c1)}
+
+/* ──────── JOURNEY ──────── */
+.journey-track{display:grid;grid-template-columns:repeat(5,1fr);margin-top:88px;position:relative;gap:0}
+.journey-track::before{content:'';position:absolute;top:52px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--goldln) 10%,var(--goldln) 90%,transparent);z-index:0}
+.j-stop{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 20px;cursor:default;position:relative}
+.j-node{width:104px;height:104px;position:relative;margin-bottom:40px;z-index:1;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.j-stop:hover .j-node{transform:scale(1.15)}
+.j-node-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.j-numeral{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--gold);line-height:1}
+.j-icon{width:22px;height:22px;opacity:.9}
+.j-icon svg{width:100%;height:100%}
+.j-node svg{width:100%;height:100%}
+.j-label{font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.12em;color:var(--cream);margin-bottom:14px}
+.j-desc{font-size:13px;font-weight:300;line-height:1.8;color:var(--c1)}
+
+/* ──────── PILLARS ──────── */
+.pillars-grid{display:grid;grid-template-columns:repeat(5,1fr);margin-top:88px}
+.pil{padding:52px 28px 60px;border:1px solid var(--bd);border-right:none;position:relative;overflow:hidden;cursor:default;transition:all .45s cubic-bezier(.16,1,.3,1)}
+.pil:last-child{border-right:1px solid var(--bd)}
+.pil::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,var(--goldlo));opacity:0;transition:opacity .4s}
+.pil:hover{background:var(--ink4);transform:translateY(-6px);box-shadow:0 32px 80px rgba(0,0,0,.5);z-index:2}
+.pil:hover::after{opacity:1}
+.pil-corner{position:absolute;top:0;right:0;width:0;height:0;border-top:36px solid var(--gold);border-left:36px solid transparent;opacity:0;transition:opacity .35s;z-index:1}
+.pil:hover .pil-corner{opacity:1}
+.pil-icon{width:52px;height:52px;margin-bottom:28px;display:flex;align-items:center;justify-content:center;border:1px solid var(--goldln);background:rgba(200,168,75,.05);position:relative;z-index:1;transition:all .4s;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)}
+.pil:hover .pil-icon{border-color:var(--gold);background:rgba(200,168,75,.12)}
+.pil-icon svg{width:26px;height:26px}
+.pil-idx{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--gold);opacity:.5;margin-bottom:16px;position:relative;z-index:1}
+.pil-name{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.07em;color:var(--cream);line-height:1.25;margin-bottom:28px;position:relative;z-index:1}
+.pil-items{display:flex;flex-direction:column;gap:0;position:relative;z-index:1}
+.pil-item{font-size:12px;font-weight:300;line-height:1.65;color:var(--c2);padding:9px 0;border-bottom:1px solid var(--bd);display:flex;gap:10px;align-items:flex-start;transition:color .25s}
+.pil-item::before{content:'';width:12px;height:1px;background:var(--gold);opacity:.3;flex-shrink:0;margin-top:9px}
+.pil-item:last-child{border-bottom:none}
+.pil:hover .pil-item{color:var(--c1)}
+
+/* ──────── ENGAGEMENT ──────── */
+.eng-cards{display:grid;grid-template-columns:repeat(3,1fr);margin-top:88px}
+.eng-card{padding:72px 52px 80px;border:1px solid var(--bd);border-right:none;position:relative;overflow:hidden;cursor:default;transition:all .5s cubic-bezier(.16,1,.3,1)}
+.eng-card:last-child{border-right:1px solid var(--bd)}
+.eng-card:hover{background:rgba(255,255,255,.025);transform:translateY(-8px);box-shadow:0 48px 96px rgba(0,0,0,.5);z-index:2}
+.eng-top-bar{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.eng-card:hover .eng-top-bar{transform:scaleX(1)}
+.eng-ghost-num{font-family:'Bebas Neue',sans-serif;font-size:160px;color:rgba(200,168,75,.04);position:absolute;top:-10px;right:20px;line-height:1;pointer-events:none;letter-spacing:-.02em}
+.eng-icon{width:68px;height:68px;margin-bottom:36px;display:flex;align-items:center;justify-content:center;border:1px solid var(--goldln);background:rgba(200,168,75,.05);position:relative;z-index:1;transition:all .4s}
+.eng-card:hover .eng-icon{border-color:var(--gold);background:rgba(200,168,75,.12)}
+.eng-icon svg{width:34px;height:34px}
+.eng-badge{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);border:1px solid var(--goldln);background:var(--goldlo);padding:6px 16px;margin-bottom:20px;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);backdrop-filter:blur(8px)}
+.eng-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.06em;color:var(--cream);margin-bottom:16px;line-height:1.1;position:relative;z-index:1}
+.eng-desc{font-size:14px;font-weight:300;line-height:1.95;color:var(--c1);position:relative;z-index:1}
+
+/* ──────── TEAM ──────── */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:88px;border:1px solid var(--bd)}
+.team-card{border-right:1px solid var(--bd);overflow:hidden;cursor:default;transition:background .4s;position:relative;background:var(--ink2)}
+.team-card:last-child{border-right:none}
+.team-card:nth-child(n+4){border-top:1px solid var(--bd)}
+.team-card:hover{background:var(--ink3)}
+.team-card:hover .team-accent-bar{transform:scaleX(1)}
+.team-photo-area{aspect-ratio:4/3;background:linear-gradient(135deg,var(--ink3),var(--ink4));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;position:relative;overflow:hidden}
+.team-photo-area::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(6,14,31,.85))}
+.team-hex-wrap{position:relative;width:110px;height:110px;z-index:1;display:flex;align-items:center;justify-content:center}
+.team-hex-wrap svg{position:absolute;inset:0;width:100%;height:100%}
+.team-initials{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--gold);letter-spacing:.08em;position:relative;z-index:1}
+.team-info{padding:32px 36px 44px;position:relative}
+.team-accent-bar{position:absolute;top:0;left:32px;width:40px;height:2px;background:linear-gradient(90deg,var(--green),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.team-name{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.1em;color:var(--cream);margin-bottom:10px}
+.team-role-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--greenhi);border:1px solid rgba(61,168,118,.35);background:rgba(61,168,118,.1);padding:6px 14px}
+.team-role-tag svg{width:12px;height:12px;flex-shrink:0}
+
+/* ──────── PROCESS ──────── */
+.proc-list{margin-top:90px;max-width:820px}
+.proc-item{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:48px 0;border-bottom:1px solid var(--bd);transition:all .35s;cursor:default;position:relative}
+.proc-item:first-child{border-top:1px solid var(--bd)}
+.proc-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,rgba(200,168,75,.06),transparent);transition:width .45s cubic-bezier(.16,1,.3,1)}
+.proc-item:hover::before{width:100%}
+.proc-item:hover{padding-left:24px}
+.proc-item:hover .proc-num{color:var(--gold)}
+.proc-left{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding-top:4px;position:relative;z-index:1}
+.proc-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid var(--bd2);background:rgba(255,255,255,.03);flex-shrink:0;transition:border-color .3s,background .3s}
+.proc-item:hover .proc-icon{border-color:var(--goldln);background:var(--goldlo)}
+.proc-icon svg{width:22px;height:22px}
+.proc-num{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--c3);transition:color .3s;line-height:1.2}
+.proc-content{position:relative;z-index:1}
+.proc-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.1em;color:var(--cream);margin-bottom:12px}
+.proc-body{font-size:14px;font-weight:300;line-height:1.9;color:var(--c1)}
+
+/* ──────── CTA SECTION ──────── */
+.cta-section{padding:200px 80px;text-align:center;position:relative;overflow:hidden;background:var(--ink3)}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(200,168,75,.10) 0%,rgba(46,125,90,.04) 40%,transparent 70%);pointer-events:none}
+.cta-section::after{content:'';position:absolute;top:-1px;left:0;right:0;height:80px;background:var(--ink2);clip-path:polygon(0 0,100% 0,100% 100%)}
+.cta-tri{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;opacity:.06;animation:slow-spin 90s linear infinite}
+.cta-inner{position:relative;z-index:2}
+.cta-overline{font-size:10px;font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:32px}
+.cta-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,9vw,130px);letter-spacing:.04em;line-height:.88;color:var(--cream);max-width:900px;margin:0 auto 20px}
+.cta-h .g{color:var(--gold);display:block;text-shadow:0 0 80px rgba(200,168,75,.3)}
+.cta-italic{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(22px,2.8vw,36px);color:var(--c2);margin-bottom:16px;display:block}
+.cta-sub{font-size:15px;font-weight:300;color:var(--c2);margin-bottom:52px;display:block}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:80px}
+
+/* Contact form */
+.cta-form{max-width:600px;margin:0 auto;background:rgba(255,255,255,.03);border:1px solid var(--bd2);padding:52px;text-align:left}
+.cta-form-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.12em;color:var(--cream);margin-bottom:32px;display:flex;align-items:center;gap:16px}
+.cta-form-title::after{content:'';flex:1;height:1px;background:var(--bd2)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.form-label{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--c3)}
+.form-input,.form-select,.form-textarea{background:rgba(255,255,255,.04);border:1px solid var(--bd2);color:var(--cream);font-family:'Outfit',sans-serif;font-size:14px;font-weight:300;padding:14px 18px;outline:none;transition:border-color .3s,background .3s;width:100%}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--c4)}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--goldln);background:rgba(200,168,75,.04)}
+.form-select{appearance:none;cursor:pointer}
+.form-select option{background:var(--ink2);color:var(--cream)}
+.form-textarea{resize:vertical;min-height:120px}
+.form-submit{width:100%;padding:18px;background:var(--gold);color:var(--ink);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:background .3s,transform .2s;margin-top:8px}
+.form-submit:hover{background:var(--goldhi);transform:translateY(-2px)}
+
+/* ──────── FOOTER ──────── */
+footer{background:var(--ink);border-top:1px solid var(--bd);padding:96px 80px 52px;position:relative}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--green),var(--gold) 50%,var(--green))}
+.foot-grid{display:grid;grid-template-columns:2.4fr 1fr 1fr 1fr;gap:80px;padding-bottom:64px;border-bottom:1px solid var(--bd)}
+.foot-logo-group{margin-bottom:20px;display:flex;align-items:center;gap:14px}
+.foot-logomark svg{width:32px;height:32px}
+.foot-brand-text{}
+.foot-brand{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.12em;color:var(--gold);line-height:1}
+.foot-brand-sub{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--c3);margin-top:3px}
+.foot-tagline{font-size:13px;font-weight:300;line-height:1.9;color:var(--c2);max-width:230px;margin-top:18px}
+.foot-col-title{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--c3);margin-bottom:24px;font-weight:500}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:13px}
+.foot-links a{font-size:13px;font-weight:300;color:var(--c3);text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:10px}
+.foot-links a::before{content:'';width:12px;height:1px;background:var(--gold);opacity:.25;flex-shrink:0;transition:opacity .25s,width .25s}
+.foot-links a:hover{color:var(--cream)}
+.foot-links a:hover::before{opacity:.7;width:20px}
+.foot-social{display:flex;gap:12px;margin-top:24px}
+.foot-social-btn{width:36px;height:36px;border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;color:var(--c3);text-decoration:none;transition:border-color .2s,color .2s,background .2s}
+.foot-social-btn:hover{border-color:var(--goldln);color:var(--gold);background:var(--goldlo)}
+.foot-social-btn svg{width:16px;height:16px}
+.foot-bar{padding-top:40px;display:flex;justify-content:space-between;align-items:center}
+.foot-copy{font-size:12px;color:var(--c3);font-weight:300}
+.foot-gold{color:var(--gold)}
+
+/* ──────── ANIMATIONS ──────── */
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 8px var(--gold)}50%{box-shadow:0 0 18px var(--gold),0 0 32px rgba(200,168,75,.4)}}
+@keyframes scroll-drip{0%{opacity:0;transform:scaleY(0);transform-origin:top}40%{opacity:1;transform:scaleY(1);transform-origin:top}80%{opacity:1;transform:scaleY(1);transform-origin:bottom}100%{opacity:0;transform:scaleY(0);transform-origin:bottom}}
+@keyframes slow-spin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.stagger.in>*:nth-child(1){opacity:1;transform:none;transition-delay:0s}
+.stagger.in>*:nth-child(2){opacity:1;transform:none;transition-delay:.09s}
+.stagger.in>*:nth-child(3){opacity:1;transform:none;transition-delay:.18s}
+.stagger.in>*:nth-child(4){opacity:1;transform:none;transition-delay:.27s}
+.stagger.in>*:nth-child(5){opacity:1;transform:none;transition-delay:.36s}
+.stagger.in>*:nth-child(6){opacity:1;transform:none;transition-delay:.45s}
+.stagger.in>*:nth-child(7){opacity:1;transform:none;transition-delay:.54s}
+
+/* ──────── RESPONSIVE ──────── */
+@media(max-width:1200px){.pillars-grid{grid-template-columns:repeat(3,1fr)}.foot-grid{grid-template-columns:1fr 1fr;gap:52px}}
+@media(max-width:960px){
+  nav{padding:0 28px}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .mobile-menu{display:block}
+  .s{padding:100px 32px}
+  .hero{padding:130px 32px 110px}
+  .about-layout,.mvp-cards,.eng-cards{grid-template-columns:1fr}
+  .mvp-card,.eng-card{border-right:1px solid var(--bd);border-bottom:none}
+  .journey-track,.pillars-grid{grid-template-columns:1fr 1fr}
+  .journey-track::before{display:none}
+  .team-grid,.stats-band{grid-template-columns:1fr 1fr}
+  .stat-cell{border-right:none;border-bottom:1px solid var(--bd)}
+  .foot-grid{grid-template-columns:1fr;gap:44px}
+  .form-row{grid-template-columns:1fr}
+  .proc-item{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .pillars-grid,.team-grid,.stats-band{grid-template-columns:1fr}
+  .journey-track{grid-template-columns:1fr}
+  .hero-h1{font-size:72px}
+  .cta-section{padding:140px 32px}
+  .cta-form{padding:32px 24px}
+  .hero-btns{flex-direction:column;align-items:center}
+  footer{padding:72px 32px 40px}
+}
+</style>
+</head>
+<body>
+
+<div id="cur-ring"></div>
+<div id="cur-dot"></div>
+<div id="cg"></div>
+
+<!-- ════════ NAV ════════ -->
+<nav id="nav">
+  <a class="nav-logo" href="#">
+    <div class="nav-logomark">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="18,2 34,34 2,34" fill="none" stroke="#C8A84B" stroke-width="1.5"/>
+        <polygon points="18,8 28,30 8,30" fill="rgba(200,168,75,0.07)" stroke="#C8A84B" stroke-width=".8"/>
+        <line x1="5" y1="34" x2="31" y2="34" stroke="#2E7D5A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="18" y1="4" x2="28" y2="22" stroke="#C8A84B" stroke-width=".8" stroke-dasharray="2 3" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="nav-brand">
+      <div class="nav-wordmark">UN<em>LEASH</em></div>
+      <div class="nav-tagline">Training &amp; Consultancy</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#pillars">Programs</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#cta" class="nav-cta">Get In Touch</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#about" class="mobile-nav-link">About</a></li>
+    <li><a href="#philosophy" class="mobile-nav-link">Philosophy</a></li>
+    <li><a href="#pillars" class="mobile-nav-link">Programs</a></li>
+    <li><a href="#team" class="mobile-nav-link">Team</a></li>
+    <li><a href="#process" class="mobile-nav-link">Process</a></li>
+  </ul>
+  <a href="#cta" class="mobile-cta-btn mobile-nav-link">Get In Touch →</a>
+</div>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-bg"></div>
+  <svg class="hero-constellation" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <polygon points="700,60 1120,820 280,820" fill="none" stroke="rgba(200,168,75,0.06)" stroke-width="1.5"/>
+    <polygon points="700,120 1040,760 360,760" fill="none" stroke="rgba(200,168,75,0.04)" stroke-width="1"/>
+    <polygon points="700,200 960,690 440,690" fill="rgba(200,168,75,0.015)" stroke="rgba(200,168,75,0.025)" stroke-width="0.8"/>
+    <path d="M 380 780 Q 700 650 1020 780" fill="none" stroke="rgba(46,125,90,0.25)" stroke-width="1.5"/>
+    <polygon points="1020,780 1008,768 1014,784" fill="rgba(46,125,90,0.35)"/>
+    <polygon points="180,160 240,280 120,280" fill="none" stroke="rgba(200,168,75,0.04)" stroke-width="1"/>
+    <polygon points="1220,200 1280,310 1160,310" fill="none" stroke="rgba(200,168,75,0.04)" stroke-width="1"/>
+    <circle cx="700" cy="60" r="3" fill="rgba(200,168,75,0.35)"/>
+    <circle cx="1120" cy="820" r="3" fill="rgba(200,168,75,0.25)"/>
+    <circle cx="280" cy="820" r="3" fill="rgba(200,168,75,0.25)"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span class="badge-txt">Training &amp; Consultancy — Philippines</span>
+      <span class="badge-dot"></span>
+    </div>
+    <h1 class="hero-h1">
+      <span class="word-solid">Unleashing</span>
+      <span class="word-gold">Leaders.</span>
+    </h1>
+    <p class="hero-serif-line">Transforming Organizations. Multiplying Impact.</p>
+    <div class="hero-divider"></div>
+    <p class="hero-desc">We partner with organizations to unlock human potential, align culture, and multiply impact through purpose-driven leadership and transformative learning.</p>
+    <div class="hero-btns">
+      <a href="#cta" class="btn-gold">Start a Conversation →</a>
+      <a href="#pillars" class="btn-outline">Explore Programs</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="scroll-label">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ════════ MARQUEE ════════ -->
+<div class="mq-wrap">
+  <div class="mq-track">
+    <div class="mq-item"><span class="mq-txt">Leadership Development</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">People &amp; HR Capability</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">Compliance &amp; Data Privacy</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">Operations Excellence</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">Future Workforce Readiness</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">Workshops · Programs · Consultancy</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">Unleashing Leaders. Transforming Organizations.</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">Leadership Development</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">People &amp; HR Capability</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">Compliance &amp; Data Privacy</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">Operations Excellence</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">Future Workforce Readiness</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">Workshops · Programs · Consultancy</span><span class="mq-gem"></span></div>
+    <div class="mq-item"><span class="mq-txt">Unleashing Leaders. Transforming Organizations.</span><span class="mq-gem"></span></div>
+  </div>
+</div>
+
+<!-- ════════ STATS ════════ -->
+<div class="stats-band stagger">
+  <div class="stat-cell">
+    <div class="stat-glow"></div>
+    <div class="stat-icon">
+      <!-- 5 pillars / columns icon -->
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="10" width="4" height="24" fill="#C8A84B" opacity=".6"/>
+        <rect x="11" y="6" width="4" height="28" fill="#C8A84B" opacity=".8"/>
+        <rect x="18" y="3" width="4" height="31" fill="#C8A84B"/>
+        <rect x="25" y="6" width="4" height="28" fill="#C8A84B" opacity=".8"/>
+        <rect x="32" y="10" width="4" height="24" fill="#C8A84B" opacity=".6"/>
+        <rect x="2" y="34" width="36" height="2" fill="#2E7D5A" opacity=".8"/>
+      </svg>
+    </div>
+    <span class="stat-num" data-target="5">0</span>
+    <span class="stat-lbl">Strategic Pillars</span>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-glow"></div>
+    <div class="stat-icon">
+      <!-- people/team icon -->
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="10" r="6" stroke="#C8A84B" stroke-width="1.5"/>
+        <path d="M8 34c0-6.627 5.373-10 12-10s12 3.373 12 10" stroke="#C8A84B" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="6" cy="14" r="4" stroke="#C8A84B" stroke-width="1.2" opacity=".5"/>
+        <path d="M1 32c0-4.418 2.239-7 5-7" stroke="#C8A84B" stroke-width="1.2" stroke-linecap="round" opacity=".5"/>
+        <circle cx="34" cy="14" r="4" stroke="#C8A84B" stroke-width="1.2" opacity=".5"/>
+        <path d="M39 32c0-4.418-2.239-7-5-7" stroke="#C8A84B" stroke-width="1.2" stroke-linecap="round" opacity=".5"/>
+      </svg>
+    </div>
+    <span class="stat-num" data-target="6">0</span>
+    <span class="stat-lbl">Expert Consultants</span>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-glow"></div>
+    <div class="stat-icon">
+      <!-- 3 engagement tiers icon -->
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="26" width="10" height="10" stroke="#C8A84B" stroke-width="1.4" opacity=".5"/>
+        <rect x="15" y="18" width="10" height="18" stroke="#C8A84B" stroke-width="1.4" opacity=".75"/>
+        <rect x="26" y="8" width="10" height="28" stroke="#C8A84B" stroke-width="1.4"/>
+        <line x1="4" y1="36" x2="36" y2="36" stroke="#2E7D5A" stroke-width="1.5" opacity=".7"/>
+      </svg>
+    </div>
+    <span class="stat-num" data-target="3">0</span>
+    <span class="stat-lbl">Engagement Models</span>
+  </div>
+</div>
+
+<!-- ════════ ABOUT ════════ -->
+<section class="s s-ink2" id="about">
+  <div class="s-max">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-lbl">Who We Are</span>
+    </div>
+    <h2 class="stitle reveal">About <span class="si">Unleash</span></h2>
+
+    <div class="about-layout">
+      <div class="stagger">
+        <!-- Vision -->
+        <div class="vm-item">
+          <div class="vm-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M1.05 12a11 11 0 0 1 21.9 0M1.05 12a11 11 0 0 0 21.9 0"/>
+              <!-- eye shape -->
+              <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" stroke="#C8A84B" stroke-width="1.2" opacity=".5"/>
+            </svg>
+          </div>
+          <div class="vm-body">
+            <div class="vm-tag">Our Vision</div>
+            <p class="vm-text">To unleash purpose-driven leaders who transform organizations, communities, and generations through values-centered leadership and organizational excellence.</p>
+          </div>
+        </div>
+        <!-- Mission -->
+        <div class="vm-item">
+          <div class="vm-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="4"/>
+              <line x1="12" y1="2" x2="12" y2="6"/>
+              <line x1="12" y1="18" x2="12" y2="22"/>
+              <line x1="2" y1="12" x2="6" y2="12"/>
+              <line x1="18" y1="12" x2="22" y2="12"/>
+            </svg>
+          </div>
+          <div class="vm-body">
+            <div class="vm-tag">Our Mission</div>
+            <p class="vm-text">We exist to partner with organizations and leaders to unlock human potential, align culture, and strengthen organizational capability through transformative learning and consulting experiences.</p>
+          </div>
+        </div>
+        <!-- Commitment -->
+        <div class="vm-item">
+          <div class="vm-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <div class="vm-body">
+            <div class="vm-tag">Our Commitment</div>
+            <p class="vm-text">Delivering practical, customized solutions that produce measurable leadership growth — across our clients, programs, partners, and society at large.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="vals-title">Core Values</div>
+        <div class="stagger">
+          <div class="val-row">
+            <div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+            <span class="val-letter">U</span><span class="val-word">Uniqueness</span>
+          </div>
+          <div class="val-row">
+            <div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round"><path d="M12 22V12M12 12C12 7 7 4 2 6"/><path d="M12 12c0-5 5-8 10-6"/><circle cx="12" cy="4" r="2"/></svg></div>
+            <span class="val-letter">N</span><span class="val-word">Nurturing Growth</span>
+          </div>
+          <div class="val-row">
+            <div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <span class="val-letter">L</span><span class="val-word">Leadership Multiplication</span>
+          </div>
+          <div class="val-row">
+            <div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round"><polygon points="12,2 2,7 12,12 22,7"/><polyline points="2,17 12,22 22,17"/><polyline points="2,12 12,17 22,12"/></svg></div>
+            <span class="val-letter">E</span><span class="val-word">Excellence in Practice</span>
+          </div>
+          <div class="val-row">
+            <div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+            <span class="val-letter">A</span><span class="val-word">Above &amp; Beyond Service</span>
+          </div>
+          <div class="val-row">
+            <div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+            <span class="val-letter">S</span><span class="val-word">Significance Over Success</span>
+          </div>
+          <div class="val-row">
+            <div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round"><path d="M17 8C8 10 5.9 16.17 3.82 20.56"/><path d="M3.82 20.56C3.17 22.09 1 22 1 22c1.72-1.05 2.84-4.26 2.82-1.44"/><path d="M9 20C12.14 9.14 23 10 23 10c-1.8.76-3.94 5.63-6 3"/></svg></div>
+            <span class="val-letter">H</span><span class="val-word">Harmony &amp; Collaboration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PHILOSOPHY ════════ -->
+<section class="s s-ink" id="philosophy">
+  <div class="s-max">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-lbl">Our Approach</span>
+    </div>
+    <h2 class="stitle reveal">The <span class="g">MVP</span> Philosophy</h2>
+    <p class="slead reveal">We unleash people to be MVPs — individuals who create meaningful value, influence others, and drive lasting impact.</p>
+
+    <div class="mvp-cards stagger" style="margin-top:80px">
+      <!-- Mindset -->
+      <div class="mvp-card">
+        <div class="mvp-bg-letter">M</div>
+        <div class="mvp-card-icon">
+          <!-- Brain / lightbulb for mindset -->
+          <svg viewBox="0 0 32 32" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="13" r="8"/>
+            <path d="M12 21v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2"/>
+            <line x1="13" y1="28" x2="19" y2="28"/>
+            <line x1="16" y1="5" x2="16" y2="3"/>
+            <line x1="9" y1="7" x2="7.5" y2="5.5"/>
+            <line x1="23" y1="7" x2="24.5" y2="5.5"/>
+            <path d="M12 13c0-2.2 1.8-4 4-4" stroke-width="1.2" opacity=".6"/>
+          </svg>
+        </div>
+        <div class="mvp-step">01 — Mindset</div>
+        <div class="mvp-big">M</div>
+        <div class="mvp-name">Mindset</div>
+        <div class="mvp-how">How leaders think</div>
+        <div class="mvp-list">
+          <div class="mvp-li"><div class="mvp-dot"></div><span>Positive Thinking</span></div>
+          <div class="mvp-li"><div class="mvp-dot"></div><span>Ownership</span></div>
+          <div class="mvp-li"><div class="mvp-dot"></div><span>Leadership Mindset</span></div>
+        </div>
+      </div>
+      <!-- Values -->
+      <div class="mvp-card">
+        <div class="mvp-bg-letter">V</div>
+        <div class="mvp-card-icon">
+          <!-- compass for values/direction -->
+          <svg viewBox="0 0 32 32" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="16" r="12"/>
+            <circle cx="16" cy="16" r="2"/>
+            <polygon points="16,6 18,14 16,14 14,14" fill="rgba(200,168,75,0.3)" stroke="#C8A84B" stroke-width="1"/>
+            <polygon points="16,26 14,18 16,18 18,18" fill="rgba(200,168,75,0.1)" stroke="#C8A84B" stroke-width="1" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="mvp-step">02 — Values</div>
+        <div class="mvp-big">V</div>
+        <div class="mvp-name">Values &amp; Behavior</div>
+        <div class="mvp-how">How people act daily</div>
+        <div class="mvp-list">
+          <div class="mvp-li"><div class="mvp-dot"></div><span>Aligned Actions</span></div>
+          <div class="mvp-li"><div class="mvp-dot"></div><span>Integrity &amp; Accountability</span></div>
+          <div class="mvp-li"><div class="mvp-dot"></div><span>Culture of Excellence</span></div>
+        </div>
+      </div>
+      <!-- Performance -->
+      <div class="mvp-card">
+        <div class="mvp-bg-letter">P</div>
+        <div class="mvp-card-icon">
+          <!-- upward arrow / chart for performance -->
+          <svg viewBox="0 0 32 32" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4,24 10,16 16,20 24,10"/>
+            <polyline points="20,10 24,10 24,14"/>
+            <line x1="4" y1="28" x2="28" y2="28"/>
+            <line x1="4" y1="4" x2="4" y2="28"/>
+          </svg>
+        </div>
+        <div class="mvp-step">03 — Performance</div>
+        <div class="mvp-big">P</div>
+        <div class="mvp-name">Performance</div>
+        <div class="mvp-how">How organizations achieve results</div>
+        <div class="mvp-list">
+          <div class="mvp-li"><div class="mvp-dot"></div><span>Consistent Results</span></div>
+          <div class="mvp-li"><div class="mvp-dot"></div><span>High-Value Contribution</span></div>
+          <div class="mvp-li"><div class="mvp-dot"></div><span>Organizational Impact</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ JOURNEY ════════ -->
+<section class="s s-ink3" id="journey">
+  <div class="s-max">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-lbl">Program Structure</span>
+    </div>
+    <h2 class="stitle reveal">The <span class="si">Unleash</span> Journey</h2>
+    <p class="slead reveal">Every engagement follows a proven five-stage path — from diagnosis to lasting organizational impact.</p>
+
+    <div class="journey-track stagger">
+      <!-- Discover -->
+      <div class="j-stop">
+        <div class="j-node">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="40,4 76,22 76,58 40,76 4,58 4,22" fill="none" stroke="rgba(200,168,75,0.25)" stroke-width="1"/>
+            <polygon points="40,12 68,26 68,54 40,68 12,54 12,26" fill="rgba(200,168,75,0.07)" stroke="rgba(200,168,75,0.45)" stroke-width="1.2"/>
+          </svg>
+          <div class="j-node-inner">
+            <span class="j-numeral">I</span>
+            <div class="j-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.6" stroke-linecap="round">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="j-label">Discover</div>
+        <div class="j-desc">Understand priorities and diagnose capability gaps</div>
+      </div>
+      <!-- Design -->
+      <div class="j-stop">
+        <div class="j-node">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="40,4 76,22 76,58 40,76 4,58 4,22" fill="none" stroke="rgba(200,168,75,0.25)" stroke-width="1"/>
+            <polygon points="40,12 68,26 68,54 40,68 12,54 12,26" fill="rgba(200,168,75,0.07)" stroke="rgba(200,168,75,0.45)" stroke-width="1.2"/>
+          </svg>
+          <div class="j-node-inner">
+            <span class="j-numeral">II</span>
+            <div class="j-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.6" stroke-linecap="round">
+                <polygon points="12,2 2,7 12,12 22,7"/>
+                <polyline points="2,17 12,22 22,17"/>
+                <polyline points="2,12 12,17 22,12"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="j-label">Design</div>
+        <div class="j-desc">Craft a customized pathway aligned to your realities</div>
+      </div>
+      <!-- Develop -->
+      <div class="j-stop">
+        <div class="j-node">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="40,4 76,22 76,58 40,76 4,58 4,22" fill="none" stroke="rgba(200,168,75,0.25)" stroke-width="1"/>
+            <polygon points="40,12 68,26 68,54 40,68 12,54 12,26" fill="rgba(200,168,75,0.07)" stroke="rgba(200,168,75,0.45)" stroke-width="1.2"/>
+          </svg>
+          <div class="j-node-inner">
+            <span class="j-numeral">III</span>
+            <div class="j-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.6" stroke-linecap="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="j-label">Develop</div>
+        <div class="j-desc">Deliver transformative learning via practical interventions</div>
+      </div>
+      <!-- Deploy -->
+      <div class="j-stop">
+        <div class="j-node">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="40,4 76,22 76,58 40,76 4,58 4,22" fill="none" stroke="rgba(200,168,75,0.25)" stroke-width="1"/>
+            <polygon points="40,12 68,26 68,54 40,68 12,54 12,26" fill="rgba(200,168,75,0.07)" stroke="rgba(200,168,75,0.45)" stroke-width="1.2"/>
+          </svg>
+          <div class="j-node-inner">
+            <span class="j-numeral">IV</span>
+            <div class="j-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.6" stroke-linecap="round">
+                <polyline points="16,3 21,3 21,8"/>
+                <line x1="4" y1="20" x2="21" y2="3"/>
+                <polyline points="21,16 21,21 16,21"/>
+                <line x1="15" y1="15" x2="21" y2="21"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="j-label">Deploy</div>
+        <div class="j-desc">Integrate new behaviors into real workplace execution</div>
+      </div>
+      <!-- Drive -->
+      <div class="j-stop">
+        <div class="j-node">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="40,4 76,22 76,58 40,76 4,58 4,22" fill="none" stroke="rgba(200,168,75,0.5)" stroke-width="1.5"/>
+            <polygon points="40,12 68,26 68,54 40,68 12,54 12,26" fill="rgba(200,168,75,0.18)" stroke="#C8A84B" stroke-width="1.5"/>
+          </svg>
+          <div class="j-node-inner">
+            <span class="j-numeral">V</span>
+            <div class="j-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.6" stroke-linecap="round">
+                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="j-label">Drive</div>
+        <div class="j-desc">Ensure sustainable impact and organizational growth</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PILLARS ════════ -->
+<section class="s s-ink2" id="pillars">
+  <div class="s-max">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-lbl">What We Offer</span>
+    </div>
+    <h2 class="stitle reveal">Five Strategic <span class="g">Pillars</span></h2>
+    <p class="slead reveal">Our programs span five focused capability areas, each designed to address specific organizational growth needs.</p>
+
+    <div class="pillars-grid stagger">
+      <!-- Pillar 1: Leadership -->
+      <div class="pil">
+        <div class="pil-corner"></div>
+        <div class="pil-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13,2 16,9 23,9 17.5,14 19.5,21 13,17 6.5,21 8.5,14 3,9 10,9"/>
+          </svg>
+        </div>
+        <div class="pil-idx">01.</div>
+        <div class="pil-name">Leadership &amp; Development</div>
+        <div class="pil-items">
+          <div class="pil-item">Emerging Leaders Program</div>
+          <div class="pil-item">Leadership Execution Program</div>
+          <div class="pil-item">Values &amp; Culture Alignment Workshop</div>
+        </div>
+      </div>
+      <!-- Pillar 2: HR -->
+      <div class="pil">
+        <div class="pil-corner"></div>
+        <div class="pil-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="pil-idx">02.</div>
+        <div class="pil-name">People &amp; HR Capability</div>
+        <div class="pil-items">
+          <div class="pil-item">HR for Non-HR Managers</div>
+          <div class="pil-item">Modern Recruitment &amp; Talent Acquisition</div>
+          <div class="pil-item">Employee Relations &amp; Labor Compliance</div>
+        </div>
+      </div>
+      <!-- Pillar 3: Compliance -->
+      <div class="pil">
+        <div class="pil-corner"></div>
+        <div class="pil-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2l10 4v6c0 5.5-4.2 10.7-10 12C7.2 22.7 3 17.5 3 12V6z"/>
+            <polyline points="9,13 11,15 17,9"/>
+          </svg>
+        </div>
+        <div class="pil-idx">03.</div>
+        <div class="pil-name">Compliance &amp; Data Privacy</div>
+        <div class="pil-items">
+          <div class="pil-item">Data Privacy Awareness Program</div>
+          <div class="pil-item">Data Privacy for Managers &amp; Supervisors</div>
+          <div class="pil-item">Building a Privacy-Ready Organization</div>
+          <div class="pil-item">Compliance &amp; Ethics in the Workplace</div>
+        </div>
+      </div>
+      <!-- Pillar 4: Operations -->
+      <div class="pil">
+        <div class="pil-corner"></div>
+        <div class="pil-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="13" cy="13" r="3"/>
+            <path d="M13 2v3M13 21v3M2 13h3M21 13h3"/>
+            <path d="M4.9 4.9l2.1 2.1M18.9 18.9l2.1 2.1M4.9 21.1l2.1-2.1M18.9 7.1l2.1-2.1"/>
+          </svg>
+        </div>
+        <div class="pil-idx">04.</div>
+        <div class="pil-name">Operations &amp; Service Excellence</div>
+        <div class="pil-items">
+          <div class="pil-item">Operational Alignment &amp; Staff Reorientation</div>
+          <div class="pil-item">Service Excellence Experience Program</div>
+          <div class="pil-item">Marketing, SEO &amp; Business Growth</div>
+        </div>
+      </div>
+      <!-- Pillar 5: Future Workforce -->
+      <div class="pil">
+        <div class="pil-corner"></div>
+        <div class="pil-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="13,5 13,12 17,14"/>
+            <circle cx="13" cy="13" r="10"/>
+            <line x1="13" y1="1" x2="13" y2="3"/>
+            <path d="M8 2.5C5 4 3 7 3 10" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="pil-idx">05.</div>
+        <div class="pil-name">Future Workforce Readiness</div>
+        <div class="pil-items">
+          <div class="pil-item">Future HR Practitioner Bootcamp</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ ENGAGEMENT ════════ -->
+<section class="s s-ink" id="engagement">
+  <div class="s-max">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-lbl">How We Engage</span>
+    </div>
+    <h2 class="stitle reveal">Engagement <span class="si">Models</span></h2>
+    <p class="slead reveal">Three flexible ways to partner — designed to meet your organization wherever it is right now.</p>
+
+    <div class="eng-cards stagger">
+      <!-- Workshop -->
+      <div class="eng-card">
+        <div class="eng-top-bar"></div>
+        <span class="eng-ghost-num">01</span>
+        <div class="eng-icon">
+          <svg viewBox="0 0 34 34" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="28" height="20" rx="2"/>
+            <line x1="3" y1="12" x2="31" y2="12"/>
+            <line x1="11" y1="23" x2="11" y2="31"/>
+            <line x1="23" y1="23" x2="23" y2="31"/>
+            <line x1="7" y1="31" x2="27" y2="31"/>
+            <line x1="9" y1="7" x2="9" y2="8"/>
+            <line x1="13" y1="7" x2="25" y2="7" opacity=".4"/>
+          </svg>
+        </div>
+        <div class="eng-badge">Workshop</div>
+        <div class="eng-title">Single Intervention</div>
+        <div class="eng-desc">A focused session designed to address a specific challenge or capability gap — practical, high-impact, and immediately applicable to your workplace.</div>
+      </div>
+      <!-- Program -->
+      <div class="eng-card">
+        <div class="eng-top-bar"></div>
+        <span class="eng-ghost-num">02</span>
+        <div class="eng-icon">
+          <svg viewBox="0 0 34 34" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            <path d="M20 7h4l6 6v9H20V7z" opacity=".5"/>
+            <line x1="8" y1="8" x2="16" y2="8" opacity=".6"/>
+            <line x1="8" y1="12" x2="16" y2="12" opacity=".6"/>
+            <line x1="8" y1="16" x2="13" y2="16" opacity=".6"/>
+          </svg>
+        </div>
+        <div class="eng-badge">Program</div>
+        <div class="eng-title">Multi-Module Learning</div>
+        <div class="eng-desc">A sustained learning journey that builds capability progressively — shaping mindset, behavior, and performance across multiple sessions over time.</div>
+      </div>
+      <!-- Consultancy -->
+      <div class="eng-card">
+        <div class="eng-top-bar"></div>
+        <span class="eng-ghost-num">03</span>
+        <div class="eng-icon">
+          <svg viewBox="0 0 34 34" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="17" cy="17" r="13"/>
+            <circle cx="17" cy="17" r="5"/>
+            <line x1="17" y1="4" x2="17" y2="12"/>
+            <line x1="17" y1="22" x2="17" y2="30"/>
+            <line x1="4" y1="17" x2="12" y2="17"/>
+            <line x1="22" y1="17" x2="30" y2="17"/>
+            <line x1="8.1" y1="8.1" x2="13.7" y2="13.7" opacity=".5"/>
+            <line x1="20.3" y1="20.3" x2="25.9" y2="25.9" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="eng-badge">Consultancy</div>
+        <div class="eng-title">Full-Cycle Partnership</div>
+        <div class="eng-desc">Diagnosis → Design → Implementation. We embed alongside your team to drive structural change and lasting organizational transformation from within.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TEAM ════════ -->
+<section class="s s-ink2" id="team">
+  <div class="s-max">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-lbl">Our People</span>
+    </div>
+    <h2 class="stitle reveal">Consultants &amp; <span class="g">Expertise</span></h2>
+    <p class="slead reveal">A network of practitioner consultants across leadership, HR, compliance, and business capability.</p>
+
+    <div class="team-grid stagger">
+      <!-- Eric Arcega -->
+      <div class="team-card">
+        <div class="team-photo-area">
+          <div class="team-hex-wrap">
+            <svg viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="44,4 84,24 84,64 44,84 4,64 4,24" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.2"/>
+              <polygon points="44,12 76,28 76,60 44,76 12,60 12,28" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width=".8"/>
+            </svg>
+            <span class="team-initials">EA</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-accent-bar"></div>
+          <div class="team-name">Eric Arcega</div>
+          <span class="team-role-tag">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><polygon points="6,1 7.5,4.5 11,4.5 8.5,7 9.5,10.5 6,8.5 2.5,10.5 3.5,7 1,4.5 4.5,4.5"/></svg>
+            Leadership &amp; Development
+          </span>
+        </div>
+      </div>
+      <!-- Boyet Manlimos -->
+      <div class="team-card">
+        <div class="team-photo-area">
+          <div class="team-hex-wrap">
+            <svg viewBox="0 0 88 88" fill="none"><polygon points="44,4 84,24 84,64 44,84 4,64 4,24" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.2"/><polygon points="44,12 76,28 76,60 44,76 12,60 12,28" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width=".8"/></svg>
+            <span class="team-initials">BM</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-accent-bar"></div>
+          <div class="team-name">Boyet Manlimos</div>
+          <span class="team-role-tag">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><polygon points="6,1 7.5,4.5 11,4.5 8.5,7 9.5,10.5 6,8.5 2.5,10.5 3.5,7 1,4.5 4.5,4.5"/></svg>
+            Leadership &amp; Development
+          </span>
+        </div>
+      </div>
+      <!-- Jessica Flordeliza -->
+      <div class="team-card">
+        <div class="team-photo-area">
+          <div class="team-hex-wrap">
+            <svg viewBox="0 0 88 88" fill="none"><polygon points="44,4 84,24 84,64 44,84 4,64 4,24" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.2"/><polygon points="44,12 76,28 76,60 44,76 12,60 12,28" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width=".8"/></svg>
+            <span class="team-initials">JF</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-accent-bar"></div>
+          <div class="team-name">Jessica Flordeliza</div>
+          <span class="team-role-tag">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M9 11v-1a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v1"/><circle cx="6" cy="4" r="2"/><path d="M11 11v-1a2 2 0 0 0-1.5-1.94"/><path d="M8 2.1a2 2 0 0 1 0 3.8"/></svg>
+            People &amp; HR Capability
+          </span>
+        </div>
+      </div>
+      <!-- Andrea Caper -->
+      <div class="team-card">
+        <div class="team-photo-area">
+          <div class="team-hex-wrap">
+            <svg viewBox="0 0 88 88" fill="none"><polygon points="44,4 84,24 84,64 44,84 4,64 4,24" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.2"/><polygon points="44,12 76,28 76,60 44,76 12,60 12,28" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width=".8"/></svg>
+            <span class="team-initials">AC</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-accent-bar"></div>
+          <div class="team-name">Andrea Caper</div>
+          <span class="team-role-tag">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M6 1l5 2v3c0 2.75-2.1 5.35-5 6C3.1 11.35 1 8.75 1 6V3z"/><polyline points="4,6 5.5,7.5 8.5,4.5"/></svg>
+            Compliance &amp; Data Privacy
+          </span>
+        </div>
+      </div>
+      <!-- Jon Dacanay -->
+      <div class="team-card">
+        <div class="team-photo-area">
+          <div class="team-hex-wrap">
+            <svg viewBox="0 0 88 88" fill="none"><polygon points="44,4 84,24 84,64 44,84 4,64 4,24" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.2"/><polygon points="44,12 76,28 76,60 44,76 12,60 12,28" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width=".8"/></svg>
+            <span class="team-initials">JD</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-accent-bar"></div>
+          <div class="team-name">Jon Dacanay</div>
+          <span class="team-role-tag">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="6" cy="6" r="1.5"/><path d="M6 1v2M6 9v2M1 6h2M9 6h2"/><path d="M2.5 2.5l1.4 1.4M8.1 8.1l1.4 1.4"/></svg>
+            Operations &amp; Service Excellence
+          </span>
+        </div>
+      </div>
+      <!-- Mike Cantos -->
+      <div class="team-card">
+        <div class="team-photo-area">
+          <div class="team-hex-wrap">
+            <svg viewBox="0 0 88 88" fill="none"><polygon points="44,4 84,24 84,64 44,84 4,64 4,24" fill="rgba(200,168,75,0.09)" stroke="rgba(200,168,75,0.35)" stroke-width="1.2"/><polygon points="44,12 76,28 76,60 44,76 12,60 12,28" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width=".8"/></svg>
+            <span class="team-initials">MC</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-accent-bar"></div>
+          <div class="team-name">Mike Cantos</div>
+          <span class="team-role-tag">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="6" cy="6" r="5"/><polyline points="6,3 6,6 8,7"/></svg>
+            Future Workforce Readiness
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PROCESS ════════ -->
+<section class="s s-ink3" id="process">
+  <div class="s-max">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-lbl">Working Together</span>
+    </div>
+    <h2 class="stitle reveal">Partnership <span class="si">Process</span></h2>
+    <p class="slead reveal">Our structured journey ensures every engagement is purposeful, personalized, and impactful from day one.</p>
+
+    <div class="proc-list stagger">
+      <!-- Step 1 -->
+      <div class="proc-item">
+        <div class="proc-left">
+          <div class="proc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <span class="proc-num">01 — Discovery</span>
+        </div>
+        <div class="proc-content">
+          <div class="proc-title">Discovery Meeting</div>
+          <p class="proc-body">We begin with a deep conversation to understand your organization's context, challenges, and aspirations — ensuring full alignment before any solution is proposed.</p>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="proc-item">
+        <div class="proc-left">
+          <div class="proc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <span class="proc-num">02 — Analysis</span>
+        </div>
+        <div class="proc-content">
+          <div class="proc-title">Needs Analysis</div>
+          <p class="proc-body">A thorough diagnosis of your current capability state, culture gaps, and performance needs — forming the foundation for a targeted, relevant program design.</p>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div class="proc-item">
+        <div class="proc-left">
+          <div class="proc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12,2 2,7 12,12 22,7"/>
+              <polyline points="2,17 12,22 22,17"/>
+              <polyline points="2,12 12,17 22,12"/>
+            </svg>
+          </div>
+          <span class="proc-num">03 — Design</span>
+        </div>
+        <div class="proc-content">
+          <div class="proc-title">Program Design</div>
+          <p class="proc-body">We craft a fully customized learning pathway — tailored to your people, your realities, and your strategic goals. No off-the-shelf solutions.</p>
+        </div>
+      </div>
+      <!-- Step 4 -->
+      <div class="proc-item">
+        <div class="proc-left">
+          <div class="proc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5,3 19,12 5,21"/>
+            </svg>
+          </div>
+          <span class="proc-num">04 — Delivery</span>
+        </div>
+        <div class="proc-content">
+          <div class="proc-title">Delivery</div>
+          <p class="proc-body">Expert facilitation of transformative learning experiences that go beyond knowledge — shaping mindset, behavior, and capability at every level.</p>
+        </div>
+      </div>
+      <!-- Step 5 -->
+      <div class="proc-item">
+        <div class="proc-left">
+          <div class="proc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+            </svg>
+          </div>
+          <span class="proc-num">05 — Impact</span>
+        </div>
+        <div class="proc-content">
+          <div class="proc-title">Impact Review</div>
+          <p class="proc-body">Post-engagement measurement and reflection to assess outcomes, capture learnings, and plan for continuous, compounding organizational growth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CTA ════════ -->
+<section class="cta-section" id="cta">
+  <div class="cta-tri" aria-hidden="true">
+    <svg width="700" height="700" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="350,20 680,680 20,680" fill="none" stroke="#C8A84B" stroke-width="1.5"/>
+      <polygon points="350,80 620,640 80,640" fill="none" stroke="#C8A84B" stroke-width="1"/>
+      <polygon points="350,160 560,600 140,600" fill="rgba(200,168,75,0.03)" stroke="#C8A84B" stroke-width=".6"/>
+      <path d="M 140 640 Q 350 520 560 640" fill="none" stroke="#2E7D5A" stroke-width="2" opacity=".6"/>
+      <polygon points="560,640 550,628 558,644" fill="#2E7D5A" opacity=".7"/>
+    </svg>
+  </div>
+
+  <div class="cta-inner">
+    <span class="cta-overline reveal">Let's Connect &amp; Partner</span>
+    <h2 class="cta-h reveal">
+      Ready to
+      <span class="g">Unleash</span>
+      Your Organization?
+    </h2>
+    <span class="cta-italic reveal">Let's build something that lasts.</span>
+    <span class="cta-sub reveal">Start a conversation about your goals. No obligations, just clarity.</span>
+
+    <div class="cta-btns reveal">
+      <a href="mailto:hello@unleash.ph" class="btn-gold">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email Us
+      </a>
+      <a href="tel:+639000000000" class="btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.07 6.07l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Us
+      </a>
+    </div>
+
+    <div class="cta-form reveal">
+      <div class="cta-form-title">Send a Message</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input class="form-input" type="text" placeholder="Juan">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input class="form-input" type="text" placeholder="dela Cruz">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" placeholder="juan@company.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Organization</label>
+          <input class="form-input" type="text" placeholder="Your Company">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Area of Interest</label>
+        <select class="form-select form-input">
+          <option value="">Select a program area…</option>
+          <option>Leadership &amp; Development</option>
+          <option>People &amp; HR Capability</option>
+          <option>Compliance &amp; Data Privacy</option>
+          <option>Operations &amp; Service Excellence</option>
+          <option>Future Workforce Readiness</option>
+          <option>General Inquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" placeholder="Tell us about your organization's goals and challenges…"></textarea>
+      </div>
+      <button class="form-submit" onclick="handleFormSubmit(this)">Send Message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo-group">
+        <div class="foot-logomark">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="18,2 34,34 2,34" fill="none" stroke="#C8A84B" stroke-width="1.5"/>
+            <polygon points="18,8 28,30 8,30" fill="rgba(200,168,75,0.07)" stroke="#C8A84B" stroke-width=".8"/>
+            <line x1="5" y1="34" x2="31" y2="34" stroke="#2E7D5A" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="foot-brand-text">
+          <div class="foot-brand">Unleash</div>
+          <div class="foot-brand-sub">Training &amp; Consultancy</div>
+        </div>
+      </div>
+      <p class="foot-tagline">Unleashing Leaders. Transforming Organizations. Multiplying Impact.</p>
+      <div class="foot-social">
+        <!-- LinkedIn -->
+        <a href="#" class="foot-social-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <!-- Facebook -->
+        <a href="#" class="foot-social-btn" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <!-- Email -->
+        <a href="mailto:hello@unleash.ph" class="foot-social-btn" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="foot-col-title">Programs</div>
+      <ul class="foot-links">
+        <li><a href="#pillars">Leadership &amp; Development</a></li>
+        <li><a href="#pillars">People &amp; HR</a></li>
+        <li><a href="#pillars">Compliance &amp; Privacy</a></li>
+        <li><a href="#pillars">Operations &amp; Service</a></li>
+        <li><a href="#pillars">Future Workforce</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="foot-col-title">Engage</div>
+      <ul class="foot-links">
+        <li><a href="#engagement">Workshops</a></li>
+        <li><a href="#engagement">Programs</a></li>
+        <li><a href="#engagement">Consultancy</a></li>
+        <li><a href="#process">Our Process</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="foot-col-title">Company</div>
+      <ul class="foot-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#philosophy">Our Philosophy</a></li>
+        <li><a href="#team">Consultants</a></li>
+        <li><a href="#cta">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span class="foot-copy">© 2026 <span class="foot-gold">Unleash</span> Training &amp; Consultancy. All rights reserved.</span>
+    <span class="foot-copy">Multiplying Impact.</span>
+  </div>
+</footer>
+
+<script>
+/* ── Cursor ── */
+const ring = document.getElementById('cur-ring');
+const dot = document.getElementById('cur-dot');
+const glow = document.getElementById('cg');
+let mx=0,my=0,rx=0,ry=0,moved=false;
+document.addEventListener('mousemove', e => {
+  mx=e.clientX; my=e.clientY;
+  dot.style.left=mx+'px'; dot.style.top=my+'px';
+  glow.style.left=mx+'px'; glow.style.top=my+'px';
+  if(!moved){ring.style.opacity='1';dot.style.opacity='1';glow.style.opacity='1';moved=true;}
+},{passive:true});
+document.addEventListener('mouseleave',()=>{ring.style.opacity='0';dot.style.opacity='0';glow.style.opacity='0';moved=false;});
+(function lerpRing(){
+  rx+=(mx-rx)*.1; ry+=(my-ry)*.1;
+  ring.style.left=rx+'px'; ring.style.top=ry+'px';
+  requestAnimationFrame(lerpRing);
+})();
+document.querySelectorAll('a,button,[class*="card"],[class*="item"],[class*="row"]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ring.style.width='60px';ring.style.height='60px';ring.style.borderColor='rgba(200,168,75,.7)'});
+  el.addEventListener('mouseleave',()=>{ring.style.width='40px';ring.style.height='40px';ring.style.borderColor='rgba(200,168,75,.45)'});
+});
+
+/* ── Nav scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20),{passive:true});
+
+/* ── Mobile menu ── */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+/* ── Intersection observer ── */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal,.stagger').forEach(el=>io.observe(el));
+
+/* ── Counter animation ── */
+const countIO = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target;
+      const target=+el.dataset.target;
+      const dur=1200;
+      const step=dur/target;
+      let n=0;
+      const t=setInterval(()=>{
+        n++;el.textContent=n;
+        if(n>=target)clearInterval(t);
+      },step);
+      countIO.unobserve(el);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('.stat-num[data-target]').forEach(el=>countIO.observe(el));
+
+/* ── Form submit ── */
+function handleFormSubmit(btn) {
+  const form = btn.closest('.cta-form');
+  const inputs = form.querySelectorAll('.form-input, .form-select, .form-textarea');
+  let valid = true;
+  inputs.forEach(inp => { if(!inp.value.trim()) { inp.style.borderColor='rgba(200,80,80,.6)'; valid=false; } else { inp.style.borderColor=''; } });
+  if(!valid) return;
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = '✓ Message Sent!';
+    btn.style.background = '#2E7D5A';
+    inputs.forEach(inp => inp.value = '');
+    setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; btn.disabled = false; }, 3000);
+  }, 1200);
+}
+
+/* ── Hero canvas particles ── */
+const canvas=document.getElementById('hero-canvas');
+const ctx=canvas.getContext('2d');
+let W,H,particles=[];
+let originX=0,originY=0,originW=200,originH=80;
+const wordGold=document.querySelector('.word-gold');
+function measureOrigin(){
+  W=canvas.width=canvas.offsetWidth;
+  H=canvas.height=canvas.offsetHeight;
+  if(wordGold){
+    const r=wordGold.getBoundingClientRect();
+    const cr=canvas.getBoundingClientRect();
+    originX=r.left-cr.left; originY=r.top-cr.top;
+    originW=r.width; originH=r.height;
+  }
+}
+measureOrigin();
+document.fonts.ready.then(()=>{ measureOrigin(); });
+window.addEventListener('resize',()=>{measureOrigin();},{passive:true});
+class Particle{
+  constructor(){this.reset();}
+  reset(){
+    const pad=originW*0.1;
+    this.x=originX-pad+Math.random()*(originW+pad*2);
+    this.y=originY+originH*0.2+Math.random()*originH*0.6;
+    this.size=Math.random()*2+.4;
+    const angle=(Math.random()-0.5)*Math.PI*0.7-Math.PI/2;
+    const speed=Math.random()*.55+.15;
+    this.vx=Math.cos(angle)*speed; this.vy=Math.sin(angle)*speed;
+    this.life=0; this.maxLife=Math.random()*180+80;
+    this.gold=Math.random()>.35;
+  }
+  update(){this.x+=this.vx;this.y+=this.vy;this.vy-=0.003;this.life++;if(this.life>this.maxLife)this.reset();}
+  draw(){
+    const t=this.life/this.maxLife;
+    const a=Math.sin(t*Math.PI)*0.65;
+    ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+    ctx.fillStyle=this.gold?`rgba(200,168,75,${a})`:`rgba(240,234,214,${a*0.45})`;
+    ctx.fill();
+  }
+}
+for(let i=0;i<70;i++){const p=new Particle();p.life=Math.floor(Math.random()*p.maxLife);particles.push(p);}
+function animParticles(){
+  ctx.clearRect(0,0,W,H);
+  particles.forEach(p=>{p.update();p.draw();});
+  for(let i=0;i<particles.length;i++){
+    for(let j=i+1;j<particles.length;j++){
+      const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<70){
+        const a=(1-dist/70)*0.09;
+        ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);
+        ctx.lineTo(particles[j].x,particles[j].y);
+        ctx.strokeStyle=`rgba(200,168,75,${a})`;ctx.lineWidth=.5;ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+</script>
+</body>
+</html>
