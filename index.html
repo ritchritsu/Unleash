@@ -33,6 +33,7 @@ html{scroll-behavior:smooth}
 }
 
 body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);background-size:72px 72px}
 
 /* ──────── CUSTOM CURSOR ──────── */
 #cur-ring{position:fixed;pointer-events:none;z-index:9999;width:40px;height:40px;border-radius:50%;border:1px solid rgba(200,168,75,.45);transform:translate(-50%,-50%);transition:width .25s,height .25s,opacity .4s,border-color .3s;opacity:0;mix-blend-mode:screen}
